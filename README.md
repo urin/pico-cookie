@@ -7,6 +7,8 @@ pico-cookie - Cookie mapper in browser
 
 It is very light, 28 steps and 599 bytes on minified.
 
+Note that any direct operations to `document.cookie` are not mapped to the object `cookie`.
+
 ## Requirement
 
 - Chrome 73+
