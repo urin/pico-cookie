@@ -1,0 +1,21 @@
+{
+  "name": "pico-cookie",
+  "version": "1.0.0",
+  "description": "Cookie mapper in browser",
+  "main": "./pico-cookie.js",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urin/pico-cookie.git"
+  },
+  "keywords": [
+    "cookie",
+    "cookies"
+  ],
+  "author": "urinkun <urinkun@gmail.com> (https://urin.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/urin/pico-cookie/issues"
+  },
+  "homepage": "https://github.com/urin/pico-cookie#readme"
+}

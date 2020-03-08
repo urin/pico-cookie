@@ -27,3 +27,5 @@ Object.defineProperty(cookie, 'put', {
   },
 })
 
+export default cookie
+

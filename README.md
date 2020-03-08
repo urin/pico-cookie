@@ -5,9 +5,7 @@ pico-cookie - Cookie mapper in browser
 
 [pico\-cookie](//github.com/urin/pico-cookie) provides the cookie object mapping to `document.cookie`.
 
-It is very light, 28 lines and 599 bytes on minified.
-
-Note that any direct operations to `document.cookie` are not mapped to the object `cookie`.
+Note that any direct operations to `document.cookie` are not reflected to the object `cookie`.
 
 ## Requirement
 
@@ -17,11 +15,21 @@ Note that any direct operations to `document.cookie` are not mapped to the objec
 - Safari 12.1+
 - Opera 60+
 - Internet Explorer is not supported
+- Node.js 12.0.0+
 
 ## Usage
 
+```shell
+npm install pico-cookie
+```
+
 ```html
-<script src="pico-cookie.js"></script>
+<script type="module">
+import cookie from './pico-cookie.js'
+
+// ...
+
+</script>
 ```
 
 ```js
