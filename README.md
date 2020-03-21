@@ -39,12 +39,7 @@ import cookie from './pico-cookie.mjs'
 - On browser
 
 ```html
-<script type="module">
-import cookie from './pico-cookie.mjs'
-
-// ...
-
-</script>
+<script src="./pico-cookie.js"></script>
 ```
 
 then
