@@ -19,18 +19,35 @@ Note that any direct operations to `document.cookie` are not reflected to the ob
 
 ## Usage
 
+- Using npm
+
 ```shell
 npm install pico-cookie
 ```
 
+- Using ES6 modules on browser
+
 ```html
 <script type="module">
-import cookie from './pico-cookie.js'
+import cookie from './pico-cookie.mjs'
 
 // ...
 
 </script>
 ```
+
+- On browser
+
+```html
+<script type="module">
+import cookie from './pico-cookie.mjs'
+
+// ...
+
+</script>
+```
+
+then
 
 ```js
 // document.cookie is mapped to cookie
