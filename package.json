@@ -1,8 +1,8 @@
 {
   "name": "pico-cookie",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cookie mapper in browser",
-  "main": "./pico-cookie.js",
+  "main": "./pico-cookie.mjs",
   "type": "module",
   "repository": {
     "type": "git",

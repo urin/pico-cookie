@@ -1,31 +1,36 @@
-const cookie = new Proxy(
-  Object.fromEntries(
-    document.cookie.split(';').map(
-      entry => entry.split('=').map(e => decodeURIComponent(e.trim()))
-    )
-  ),
-  {
-    set(_, key, value) {
-      document.cookie = `${ encodeURIComponent(key) }=${ encodeURIComponent(value) }`
-      return Reflect.set(...arguments)
-    },
-    deleteProperty(_, key) {
-      document.cookie = `${ encodeURIComponent(key) }=; max-age=0`
-      return Reflect.deleteProperty(...arguments)
+const cookie = (() => {
+  const encode = encodeURIComponent
+  const decode = decodeURIComponent
+  return Object.defineProperty(
+    new Proxy(
+      Object.fromEntries(
+        document.cookie.split(';').map(
+          entry => entry.split('=').map(e => decode(e.trim()))
+        )
+      ),
+      {
+        set(_, key, value) {
+          document.cookie = `${ encode(key) }=${ encode(value) }`
+          return Reflect.set(...arguments)
+        },
+        deleteProperty(_, key) {
+          document.cookie = `${ encode(key) }=; max-age=0`
+          return Reflect.deleteProperty(...arguments)
+        }
+      }
+    ),
+    'put',
+    {
+      value(key, value, attributes) {
+        document.cookie = `${ encode(key) }=${ encode(value) }` + (
+          attributes ? '; ' + Object.entries(attributes).map(
+            pair => pair.map(p => encode(p)).join('=')
+          ).join('; ') : ''
+        )
+        this[key] = value
+        return this
+      }
     }
-  }
-)
-Object.defineProperty(cookie, 'put', {
-  value(key, value, attributes) {
-    document.cookie = `${ encodeURIComponent(key) }=${ encodeURIComponent(value) }` + (
-      attributes ? '; ' + Object.entries(attributes).map(
-        pair => pair.map(p => encodeURIComponent(p)).join('=')
-      ).join('; ') : ''
-    )
-    this[key] = value
-    return this
-  },
-})
-
-export default cookie
+  )
+})()
 
