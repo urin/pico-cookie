@@ -1,4 +1,4 @@
-pico-cookie - Cookie mapper in browser
+pico-cookie - Cookie mapper on browser
 ===
 
 ## Overview
@@ -6,6 +6,8 @@ pico-cookie - Cookie mapper in browser
 [pico\-cookie](//github.com/urin/pico-cookie) provides the cookie object mapping to `document.cookie`.
 
 Note that any direct operations to `document.cookie` are not reflected to the object `cookie`.
+
+Keys and values are encoded and decoded by `encodeURIComponent` and `decodeURIComponent`.
 
 ## Requirement
 
@@ -17,7 +19,7 @@ Note that any direct operations to `document.cookie` are not reflected to the ob
 - Internet Explorer is not supported
 - Node.js 12.0.0+
 
-## Usage
+## Getting started
 
 - Using npm
 
@@ -42,7 +44,7 @@ import cookie from './pico-cookie.mjs'
 <script src="./pico-cookie.js"></script>
 ```
 
-then
+## Usage
 
 ```js
 // document.cookie is mapped to cookie
